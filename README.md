@@ -1,3 +1,16 @@
+
+# Demo of our charity platform application v1.0.0 (still in the works)
+
+<img src = "https://github.com/davlu/charity-app/blob/master/Screen%20Shot%202021-01-05%20at%203.37.04%20PM.png">
+
+
+<img src = "https://github.com/davlu/charity-app/blob/master/Screen%20Shot%202021-01-05%20at%203.38.17%20PM.png">
+
+<img src = "https://github.com/davlu/charity-app/blob/master/Screen%20Shot%202021-01-05%20at%203.41.50%20PM.png">
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
