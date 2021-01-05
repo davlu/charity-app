@@ -1,5 +1,6 @@
 
 # Demo of our charity platform application v1.0.0 (still in the works)
+URL: https://charity-platform-app.web.app/
 
 <img src = "https://github.com/davlu/charity-app/blob/master/Screen%20Shot%202021-01-05%20at%203.37.04%20PM.png" style="width:500px;height:600px;">
 
