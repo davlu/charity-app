@@ -1,15 +1,11 @@
 import React from 'react'
-import {Form, Col} from 'react-bootstrap'
-function SearchForm({params, onParamChange}) {
+import {Form, Col, Button} from 'react-bootstrap'
+function SearchForm({description, onParamChange, handleSubmit}) {
     return (
-    <Form className="mb-4">
-      <Form.Row className="align-items-end">
-        <Form.Group as={Col}>
-          <Form.Label>Description</Form.Label>
-          <Button onSubmit={onParamChange} value={params.description} name="description" type="text" />
-        </Form.Group>
-        </Form.Row>.
-    </Form>
+    <form className="mb-4" onSubmit={handleSubmit}>
+      <input onChange={onParamChange} value={description} name="description" type="text" />
+      <button type="submit">Submit</button>
+    </form>
     )
 }
 

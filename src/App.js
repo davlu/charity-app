@@ -8,27 +8,25 @@ import {Form, Col} from 'react-bootstrap'
 
 function App() {
   const [params, setParams] = useState("");
+  const [inputValue, setInputValue] = useState("");
   const {charities, loading, error} = useFetchEvents(params);
 
-  function handleParamChange(e) {
-    const param = e.target.name
-    const value = e.target.value
-    setParams(prevParams => {
-      return { ...prevParams, [param]: value }
-    })
+  const handleParamChange = e => {
     e.preventDefault();
+    setInputValue(e.target.value);
   }
 
   const handleSubmit = (event) => {
-    console.log(event)
     event.preventDefault();
+    console.log(params);
+    setParams(inputValue);
   }
 
   return (
 
     <Container className = "my-4">
       <h1 className = "mb-4">Charity App</h1>
-      <SearchForm params={params} onParamChange={handleParamChange} />
+      <SearchForm description={inputValue} onParamChange={handleParamChange} handleSubmit={handleSubmit} />
       {loading && <h1> loading ...</h1>}
       {charities.map(charity => {
         return <Charity key = {charity.ein} charity = {charity}/>

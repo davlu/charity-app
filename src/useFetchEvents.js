@@ -29,14 +29,14 @@ function formatString(str) {
   }
 
   
-function useFetchEvents(params){
+function useFetchEvents(description){
     const [state, dispatch] = useReducer(reducer, {charities: [], loading: true, error: false});   
     //dispatch uses our reducer function to setState with corresponding "action"
     const cancelToken = axios.CancelToken.source();
-    console.log(BASE_URL.concat(params.description))
+    console.log(BASE_URL.concat(description))
     useEffect(() => {
         dispatch({type: Actions.MAKE_REQUEST})  //update loading state to true
-        axios.get(BASE_URL.concat(params.description), {
+        axios.get(BASE_URL.concat(description), {
             cancelToken : cancelToken.token
         }).then(res => {
             dispatch({type: Actions.GET_DATA, payload : { charities: res.data.data}})
@@ -47,7 +47,7 @@ function useFetchEvents(params){
         return () => {
             cancelToken.cancel();
         }
-    }, [params])  //everytime we change our params. like the search query.
+    }, [description])  //everytime we change our params. like the search query.
     return state; //return the reduced state
 }
 
